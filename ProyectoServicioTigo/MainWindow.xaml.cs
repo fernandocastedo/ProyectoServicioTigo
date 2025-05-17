@@ -5,21 +5,17 @@ using System.Windows.Controls;
 
 namespace ProyectoServicioTigo
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
             InitializeNavigation();
-            ShowPlans(); // Mostrar vista inicial
+            ShowPlans();
         }
 
         private void InitializeNavigation()
         {
-            // Configurar el manejador de eventos de navegación del HeaderView
             if (headerView != null)
             {
                 headerView.NavigateRequested += OnNavigateRequested;
@@ -27,6 +23,15 @@ namespace ProyectoServicioTigo
         }
 
         private void OnNavigateRequested(object sender, UserControl view)
+        {
+            if (view is CarritoView carritoView)
+            {
+                carritoView.NavigationRequested += OnNavigationRequested;
+            }
+            MainContent.Content = view;
+        }
+
+        private void OnNavigationRequested(UserControl view)
         {
             MainContent.Content = view;
         }
@@ -43,16 +48,23 @@ namespace ProyectoServicioTigo
 
         public void ShowCart()
         {
-            MainContent.Content = new CarritoView();
+            var carritoView = new CarritoView();
+            carritoView.NavigationRequested += OnNavigationRequested;
+            MainContent.Content = carritoView;
         }
 
-        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        protected override void OnClosing(CancelEventArgs e)
         {
-            // Limpiar eventos
             if (headerView != null)
             {
                 headerView.NavigateRequested -= OnNavigateRequested;
             }
+
+            if (MainContent.Content is CarritoView carritoView)
+            {
+                carritoView.NavigationRequested -= OnNavigationRequested;
+            }
+
             base.OnClosing(e);
         }
     }

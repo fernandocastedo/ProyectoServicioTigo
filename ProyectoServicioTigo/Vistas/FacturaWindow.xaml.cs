@@ -6,6 +6,8 @@ namespace ProyectoServicioTigo.Vistas
 {
     public partial class FacturaWindow : Window
     {
+        public event System.Action CompraCompletada;
+
         private readonly PackageBase _plan;
         private readonly List<ServiceExtra> _extras;
 
@@ -15,7 +17,6 @@ namespace ProyectoServicioTigo.Vistas
             _plan = plan;
             _extras = extras;
 
-            // Mostrar datos en la ventana
             txtPlan.Text = $"{_plan.Nombre} - {_plan.Descripcion}";
             lstExtras.ItemsSource = _extras;
             txtTotal.Text = $"Bs {_plan.CalcularTotal(_extras)}";
@@ -27,13 +28,19 @@ namespace ProyectoServicioTigo.Vistas
                 string.IsNullOrWhiteSpace(txtCI.Text) ||
                 string.IsNullOrWhiteSpace(txtDireccion.Text))
             {
-                MessageBox.Show("Por favor, completa todos los datos del cliente.", "Datos incompletos", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Por favor, completa todos los datos del cliente.",
+                               "Datos incompletos",
+                               MessageBoxButton.OK,
+                               MessageBoxImage.Warning);
                 return;
             }
 
-            MessageBox.Show($"¡Gracias por tu compra, {txtNombre.Text}!", "Compra realizada", MessageBoxButton.OK, MessageBoxImage.Information);
+            CompraCompletada?.Invoke();
+            MessageBox.Show($"¡Gracias por tu compra, {txtNombre.Text}!",
+                          "Compra realizada",
+                          MessageBoxButton.OK,
+                          MessageBoxImage.Information);
             this.Close();
-
         }
     }
 }

@@ -22,8 +22,7 @@
                    Stretch="Uniform" />
 
             <Button Style="{StaticResource MenuButtonStyle}" Content="Planes Internet" Margin="0,0,30,0" Click="Button_Click" />
-            <Button Style="{StaticResource MenuButtonStyle}" Content="Planes TV" Margin="0,0,30,0" Click="Button_Click_1" />
-            <Button Style="{StaticResource MenuButtonStyle}" Content="Cerrar" Margin="0,0,30,0" />
+            <Button Style="{StaticResource MenuButtonStyle}" Content="Planes Extra" Margin="0,0,30,0" Click="Button_Click_1" />
         </StackPanel>
 
         <!-- Botón carrito (derecha) -->
