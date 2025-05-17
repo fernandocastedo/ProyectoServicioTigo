@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="ProyectoServicioTigo.Vistas.CarritoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:modelos="clr-namespace:ProyectoServicioTigo.Modelos"
+             xmlns:local="clr-namespace:ProyectoServicioTigo.Vistas"
+             xmlns:servicios="clr-namespace:ProyectoServicioTigo.Servicios">
+
+    <StackPanel Margin="30">
+        <TextBlock Text="Carrito de Compra"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   Margin="0,0,0,20"/>
+
+        <ItemsControl ItemsSource="{x:Static servicios:Carrito.PlanesSeleccionados}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="{x:Type modelos:PackageBase}">
+                    <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="0,0,0,10">
+                        <StackPanel>
+                            <TextBlock Text="{Binding Nombre}" FontWeight="Bold"/>
+                            <TextBlock Text="{Binding Descripcion}"/>
+                            <TextBlock Text="{Binding CostoBase, StringFormat=Costo: Bs {0}}"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <Button Content="Confirmar Compra"
+                Width="200"
+                Margin="0,20,0,0"
+                HorizontalAlignment="Center"
+                Background="DarkBlue"
+                Foreground="White"
+                Click="Confirmar_Click"/>
+    </StackPanel>
+</UserControl>

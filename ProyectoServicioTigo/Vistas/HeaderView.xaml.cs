@@ -24,5 +24,22 @@ namespace ProyectoServicioTigo.Vistas
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).MainContent.Content = new PlanesView();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var extrasView = new ExtrasView();
+            // Suponiendo que tienes un ContentControl llamado MainContent
+            ((MainWindow)Application.Current.MainWindow).MainContent.Content = extrasView;
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            ((MainWindow)Application.Current.MainWindow).MainContent.Content = new CarritoView();
+        }
     }
 }

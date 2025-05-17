@@ -36,9 +36,13 @@ namespace ProyectoServicioTigo
             DockPanel.SetDock(carouselView, Dock.Top);
         }
 
-        private void ShowPlans()
+        public void ShowPlans()
         {
-            PlanesView plansView = new PlanesView();
+            MainContent.Content = new PlanesView();
+        }
+        public void ShowExtras()
+        {
+            MainContent.Content = new ExtrasView();
         }
     }
 }

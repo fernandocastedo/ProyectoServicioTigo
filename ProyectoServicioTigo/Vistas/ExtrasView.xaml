@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="ProyectoServicioTigo.Vistas.PlanesView"
+﻿<UserControl x:Class="ProyectoServicioTigo.Vistas.ExtrasView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,56 +6,54 @@
              xmlns:vistas="clr-namespace:ProyectoServicioTigo.Vistas"
              xmlns:modelos="clr-namespace:ProyectoServicioTigo.Modelos"
              mc:Ignorable="d" 
-             d:DataContext="{d:DesignInstance Type=vistas:PlanesViewModel}"
+             d:DataContext="{d:DesignInstance Type=vistas:ExtrasViewModel}"
              Height="Auto" Width="Auto">
+
     <UserControl.DataContext>
-        <vistas:PlanesViewModel/>
+        <vistas:ExtrasViewModel/>
     </UserControl.DataContext>
 
     <ScrollViewer VerticalScrollBarVisibility="Auto">
         <StackPanel Margin="40,20">
 
-            <TextBlock Text="Nuestros Planes"
+            <TextBlock Text="Servicios Extras"
                        FontSize="28"
                        FontWeight="Bold"
                        HorizontalAlignment="Center"
                        Margin="0,0,0,30"/>
 
-            <ItemsControl ItemsSource="{Binding Planes}">
-                <!-- Márgenes entre items -->
+            <ItemsControl ItemsSource="{Binding Extras}">
                 <ItemsControl.Resources>
                     <Style TargetType="ContentPresenter">
-                        <Setter Property="Margin" Value="0,0,0,25"/>
+                        <Setter Property="Margin" Value="0,0,0,20"/>
                     </Style>
                 </ItemsControl.Resources>
 
                 <ItemsControl.ItemTemplate>
-                    <DataTemplate DataType="{x:Type modelos:PackageBase}">
-                        <Border Padding="20"
+                    <DataTemplate DataType="{x:Type modelos:ServiceExtra}">
+                        <Border Padding="15"
                                 CornerRadius="10"
                                 BorderThickness="1"
-                                BorderBrush="#003D8F">
+                                BorderBrush="#007ACC">
                             <StackPanel>
                                 <TextBlock Text="{Binding Nombre}"
-                                           FontSize="20"
+                                           FontSize="18"
                                            FontWeight="Bold"/>
-                                <TextBlock Text="{Binding Descripcion}"
-                                           Margin="0,5,0,0"/>
-                                <TextBlock Text="{Binding CostoBase, StringFormat=Costo\: Bs {0}}"
-                                           Margin="0,2,0,15"
+                                <TextBlock Text="{Binding Costo, StringFormat=Precio\: Bs {0}}"
+                                           Margin="0,5,0,0"
                                            FontWeight="SemiBold"/>
-
-                                <Button Content="Agregar al Carrito"
-                                        Width="150"
-                                        HorizontalAlignment="Center"
-                                        Background="#003D8F"
+                                <Button Content="Agregar"
+                                        Width="100"
+                                        HorizontalAlignment="Right"
+                                        Background="#007ACC"
                                         Foreground="White"
-                                        Click="AgregarAlCarrito_Click"/>
+                                        Margin="0,10,0,0"/>
                             </StackPanel>
                         </Border>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
+
         </StackPanel>
     </ScrollViewer>
 </UserControl>

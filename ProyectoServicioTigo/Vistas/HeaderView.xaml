@@ -21,10 +21,9 @@
                    Margin="0,0,30,0"
                    Stretch="Uniform" />
 
-            <Button Style="{StaticResource MenuButtonStyle}" Content="Personas" Margin="0,0,30,0" />
-            <Button Style="{StaticResource MenuButtonStyle}" Content="Empresas" Margin="0,0,30,0" />
-            <Button Style="{StaticResource MenuButtonStyle}" Content="Planes" Margin="0,0,30,0" />
-            <Button Style="{StaticResource MenuButtonStyle}" Content="Tigo Money" />
+            <Button Style="{StaticResource MenuButtonStyle}" Content="Planes Internet" Margin="0,0,30,0" Click="Button_Click" />
+            <Button Style="{StaticResource MenuButtonStyle}" Content="Planes TV" Margin="0,0,30,0" Click="Button_Click_1" />
+            <Button Style="{StaticResource MenuButtonStyle}" Content="Cerrar" Margin="0,0,30,0" />
         </StackPanel>
 
         <!-- Botón carrito (derecha) -->
@@ -32,7 +31,7 @@
                 Width="40" Height="40"
                 VerticalAlignment="Center"
                 ToolTip="Ver Carrito"
-                Style="{StaticResource MenuButtonStyle}">
+                Style="{StaticResource MenuButtonStyle}" Click="Button_Click_2">
 
             <Path Fill="White" Stretch="Uniform" Width="22" Height="22"
                   Data="M3,6 L5,6 L8,16 L18,16 L21,6 L6,6"

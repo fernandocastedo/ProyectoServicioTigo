@@ -16,8 +16,6 @@
         <vistas:CarouselView DockPanel.Dock="Top" Margin="0"/>
 
         <!-- SECCIÓN DE PLANES -->
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
-            <vistas:PlanesView />
-        </ScrollViewer>
+        <ContentControl x:Name="MainContent" />
     </DockPanel>
 </Window>
