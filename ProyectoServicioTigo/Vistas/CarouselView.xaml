@@ -15,10 +15,5 @@
         </Storyboard>
     </UserControl.Resources>
 
-    <Grid>
-        <!-- usa Source directamente, sin ImageBrush -->
-        <Image x:Name="Slide"
-               Source="/Imagenes/carousel1.jpg"     
-            Stretch="UniformToFill"/>
     </Grid>
 </UserControl>
