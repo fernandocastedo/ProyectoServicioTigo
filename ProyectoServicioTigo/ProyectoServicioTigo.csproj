@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Imagenes\carousel1.jpg" />
+    <None Remove="Imagenes\carousel2.jpg" />
+    <None Remove="Imagenes\carousel3.jpg" />
+    <None Remove="Imagenes\tigo_logo.png" />
     <None Remove="NewFile1.txt" />
     <None Remove="NewFile2.txt" />
   </ItemGroup>
@@ -16,6 +20,19 @@
   <ItemGroup>
     <Folder Include="Utilidades\" />
     <Folder Include="Servicios\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Imagenes\carousel1.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Imagenes\carousel2.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Imagenes\carousel3.jpg" />
+    <Resource Include="Imagenes\tigo_logo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

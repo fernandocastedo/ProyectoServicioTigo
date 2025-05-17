@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vistas="clr-namespace:ProyectoServicioTigo.Vistas"   
         mc:Ignorable="d"
-        Title="Tigo Start" Height="800" Width="1200">
+        Title="Tigo Start" Height="800" Width="1200"    >
 
     <DockPanel>  
 

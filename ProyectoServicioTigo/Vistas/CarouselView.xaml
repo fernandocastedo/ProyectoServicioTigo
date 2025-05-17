@@ -5,15 +5,32 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ProyectoServicioTigo.Vistas"
              mc:Ignorable="d" 
-             Height="300" Width="Auto">
-    <UserControl.Resources>
-        <!-- Storyboard como recurso -->
-        <Storyboard x:Key="FadeStoryboard" RepeatBehavior="Forever">
-            <DoubleAnimation Storyboard.TargetName="Slide"
-                             Storyboard.TargetProperty="Opacity"
-                             From="1" To="0" Duration="0:0:5"/>
-        </Storyboard>
-    </UserControl.Resources>
+             Height="Auto" Width="Auto">
+    <Grid>
+
+        <Image x:Name="ImageDisplay"
+           Stretch="UniformToFill"
+           HorizontalAlignment="Stretch"
+           VerticalAlignment="Stretch"
+           Margin="0" />
+        <Button Content="&#x276E;"  
+            Width="40" Height="40"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+                Margin="10,0,0,0"
+                Background="#88000000"
+                Foreground="White"
+                FontSize="24"
+                Click="PrevImage_Click"/>
+        <Button Content="&#x276F;"  
+                Width="40" Height="40"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Right"
+                Margin="0,0,10,0"
+                Background="#88000000"
+                Foreground="White"
+                FontSize="24"
+                Click="NextImage_Click"/>
 
     </Grid>
 </UserControl>
