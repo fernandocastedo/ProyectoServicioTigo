@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProyectoServicioTigo.Controladores;
+using ProyectoServicioTigo.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,6 +23,7 @@ namespace ProyectoServicioTigo.Vistas
     public partial class LoginView : UserControl
     {
         private LoadingWindow _main;
+        private readonly AuthController _auth = new AuthController();
         public LoginView(LoadingWindow main)
         {
             InitializeComponent();
@@ -32,7 +35,27 @@ namespace ProyectoServicioTigo.Vistas
         }
         private void OnLoginClick(object sender, RoutedEventArgs e)
         {
+            string email    = EmailTextBox.Text.Trim();
+            string password = PasswordBox.Password.Trim();
 
+            Usuario? user = _auth.Login(email, password);
+
+            if (user is null)
+            {
+                MessageBox.Show("Credenciales incorrectas", "Error",
+                                MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            // Guarda sesión (Singleton)
+            Session.Actual.Login(user);
+
+            // Abre la ventana principal
+            MainWindow main = new MainWindow();
+            main.Show();
+
+            // Cierra login
+            this.Close();
         }
     }
 }

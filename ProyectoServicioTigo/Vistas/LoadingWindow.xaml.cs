@@ -29,7 +29,9 @@ namespace ProyectoServicioTigo.Vistas
         {
             var loginView = new LoginView(this);
             MostrarVistaConAnimacion(loginView);
+
         }
+
 
         public void MostrarVistaRecuperar()
         {

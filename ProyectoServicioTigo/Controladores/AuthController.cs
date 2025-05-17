@@ -17,7 +17,12 @@ namespace ProyectoServicioTigo.Controladores
         };
 
         public Usuario? Login(string email, string password)
-            => _usuarios.FirstOrDefault(u => u.Email == email && u.Password == password);
+        {
+            return _usuarios.FirstOrDefault
+                (u => u.Email.Equals(email, StringComparison.OrdinalIgnoreCase)
+                      && u.Password == password);
+        }
+
 
         public bool ExisteCorreo(string email)
             => _usuarios.Any(u => u.Email == email);

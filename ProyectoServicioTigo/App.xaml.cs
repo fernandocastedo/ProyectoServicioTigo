@@ -10,5 +10,6 @@ namespace ProyectoServicioTigo
     /// </summary>
     public partial class App : Application
     {
+
     }
 }
