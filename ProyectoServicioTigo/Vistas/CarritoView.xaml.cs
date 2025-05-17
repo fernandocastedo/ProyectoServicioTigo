@@ -9,6 +9,8 @@ namespace ProyectoServicioTigo.Vistas
         public CarritoView()
         {
             InitializeComponent();
+            // Actualizamos el DataContext para que se refresque la lista del carrito decorado
+            DataContext = Carrito.PlanesSeleccionados;
         }
 
         private void Confirmar_Click(object sender, RoutedEventArgs e)
@@ -28,4 +30,3 @@ namespace ProyectoServicioTigo.Vistas
         }
     }
 }
-

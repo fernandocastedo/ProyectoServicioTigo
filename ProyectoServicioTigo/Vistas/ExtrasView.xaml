@@ -47,6 +47,7 @@
                                         HorizontalAlignment="Right"
                                         Background="#007ACC"
                                         Foreground="White"
+                                        Click="AgregarExtra_Click"
                                         Margin="0,10,0,0"/>
                             </StackPanel>
                         </Border>
