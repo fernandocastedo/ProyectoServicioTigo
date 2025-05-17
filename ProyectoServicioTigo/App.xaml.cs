@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using ProyectoServicioTigo.Vistas;
+using System.Configuration;
 using System.Data;
 using System.Windows;
 
@@ -10,5 +11,4 @@ namespace ProyectoServicioTigo
     public partial class App : Application
     {
     }
-
 }

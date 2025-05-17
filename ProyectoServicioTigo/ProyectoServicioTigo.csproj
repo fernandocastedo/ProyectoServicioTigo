@@ -12,6 +12,9 @@
     <None Remove="Imagenes\carousel1.jpg" />
     <None Remove="Imagenes\carousel2.jpg" />
     <None Remove="Imagenes\carousel3.jpg" />
+    <None Remove="Imagenes\fondoAzul.jpg" />
+    <None Remove="Imagenes\fondoCarga.jpg" />
+    <None Remove="Imagenes\tigoLogo.png" />
     <None Remove="Imagenes\tigo_logo.png" />
     <None Remove="NewFile1.txt" />
     <None Remove="NewFile2.txt" />
@@ -30,6 +33,15 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Imagenes\carousel3.jpg" />
+    <Resource Include="Imagenes\fondoAzul.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Imagenes\fondoCarga.jpg">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Imagenes\tigoLogo.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Imagenes\tigo_logo.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>

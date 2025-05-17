@@ -1,0 +1,16 @@
+﻿<Window x:Class="ProyectoServicioTigo.Vistas.LoadingWindow"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vistas="clr-namespace:ProyectoServicioTigo.Vistas"
+        Title="Mi Tigo"
+        Height="720"
+        Width="1280">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Imagenes/fondoCarga.jpg" Stretch="UniformToFill"/>
+        </Grid.Background>
+        <!-- Área para cargar vistas dinámicamente -->
+        <ContentControl x:Name="MainContent"/>
+    </Grid>
+</Window>
+
