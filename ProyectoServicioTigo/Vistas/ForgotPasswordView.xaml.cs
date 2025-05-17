@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.DirectoryServices.ActiveDirectory;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,23 +17,19 @@ using System.Windows.Shapes;
 namespace ProyectoServicioTigo.Vistas
 {
     /// <summary>
-    /// Interaction logic for LoginView.xaml
+    /// Interaction logic for ForgotPasswordView.xaml
     /// </summary>
-    public partial class LoginView : UserControl
+    public partial class ForgotPasswordView : UserControl
     {
         private LoadingWindow _main;
-        public LoginView(LoadingWindow main)
+        public ForgotPasswordView(LoadingWindow main)
         {
             InitializeComponent();
             _main = main;
         }
-        private void ForgotPassword_Click(object sender, MouseButtonEventArgs e)
+        private void OnBackClick(object sender, RoutedEventArgs e)
         {
-            _main.MostrarVistaRecuperar();
-        }
-        private void OnLoginClick(object sender, RoutedEventArgs e)
-        {
-
+            _main.MostrarVistaLogin();
         }
     }
 }
