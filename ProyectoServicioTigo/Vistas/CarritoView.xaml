@@ -31,6 +31,6 @@
                 HorizontalAlignment="Center"
                 Background="DarkBlue"
                 Foreground="White"
-                Click="Confirmar_Click"/>
+                Click="ConfirmarCompra_Click"/>
     </StackPanel>
 </UserControl>
