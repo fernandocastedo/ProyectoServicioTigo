@@ -13,9 +13,7 @@
         <vistas:HeaderView DockPanel.Dock="Top"/>
 
         <!-- CARRUSEL -->
-        <vistas:CarouselView Margin="0,100,0,0"
-                             HorizontalAlignment="Stretch"
-                             VerticalAlignment="Top"/>
+        <vistas:CarouselView DockPanel.Dock="Top" Margin="0"/>
 
         <!-- SECCIÓN DE PLANES -->
         <ScrollViewer VerticalScrollBarVisibility="Auto">
