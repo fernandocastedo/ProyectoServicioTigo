@@ -57,5 +57,9 @@ namespace ProyectoServicioTigo.Vistas
             // Cierra login
             _main.Close();
         }
+        private void IrARegistro_Click(object sender, RoutedEventArgs e)
+        {
+            _main.MostrarVistaRegistro();
+        }
     }
 }

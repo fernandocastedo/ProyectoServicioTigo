@@ -25,6 +25,11 @@ namespace ProyectoServicioTigo.Vistas
             InitializeComponent();
             MostrarVistaLogin(); // Vista inicial
         }
+        public void MostrarVistaRegistro()
+        {
+            MainContent.Content = new RegistroView(this);
+        }
+
         public void MostrarVistaLogin()
         {
             var loginView = new LoginView(this);

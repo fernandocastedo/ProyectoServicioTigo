@@ -87,6 +87,11 @@
                         </Style>
                     </Button.Style>
                 </Button>
+                <TextBlock Margin="0,15,0,0" HorizontalAlignment="Center">
+    <Hyperlink Click="IrARegistro_Click">
+        ¿No tienes cuenta? Regístrate
+    </Hyperlink>
+                </TextBlock>
 
                 <!-- Texto para "He olvidado mi contrasena" -->
                 <TextBlock Text="He olvidado mi contrasena"
