@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vistas="clr-namespace:ProyectoServicioTigo.Vistas"   
         mc:Ignorable="d"
-        Title="Tigo Start" Height="800" Width="1200"    >
+        Title="Tigo Start" Height="800" Width="1200"
+        WindowStartupLocation="CenterScreen">
 
-    <DockPanel>  
-
+    <DockPanel LastChildFill="True">
         <!-- HEADER (barra azul) -->
-        <vistas:HeaderView DockPanel.Dock="Top"/>
+        <vistas:HeaderView x:Name="headerView" DockPanel.Dock="Top"/>
 
         <!-- CARRUSEL -->
         <vistas:CarouselView DockPanel.Dock="Top" Margin="0"/>
 
-        <!-- SECCIÓN DE PLANES -->
+        <!-- CONTENIDO PRINCIPAL -->
         <ContentControl x:Name="MainContent" />
     </DockPanel>
 </Window>

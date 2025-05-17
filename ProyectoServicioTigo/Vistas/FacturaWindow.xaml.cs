@@ -33,6 +33,7 @@ namespace ProyectoServicioTigo.Vistas
 
             MessageBox.Show($"¡Gracias por tu compra, {txtNombre.Text}!", "Compra realizada", MessageBoxButton.OK, MessageBoxImage.Information);
             this.Close();
+
         }
     }
 }

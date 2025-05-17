@@ -55,7 +55,7 @@ namespace ProyectoServicioTigo.Vistas
             main.Show();
 
             // Cierra login
-            this.Close();
+            _main.Close();
         }
     }
 }

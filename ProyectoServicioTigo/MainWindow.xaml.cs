@@ -1,14 +1,7 @@
 ﻿using ProyectoServicioTigo.Vistas;
-using System.Text;
+using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ProyectoServicioTigo
 {
@@ -20,29 +13,47 @@ namespace ProyectoServicioTigo
         public MainWindow()
         {
             InitializeComponent();
-            ShowHeader();
-            ShowCarousel();
-            ShowPlans();
-        }
-        private void ShowHeader()
-        {
-            HeaderView headerView = new HeaderView();
-            DockPanel.SetDock(headerView, Dock.Top);
+            InitializeNavigation();
+            ShowPlans(); // Mostrar vista inicial
         }
 
-        private void ShowCarousel()
+        private void InitializeNavigation()
         {
-            CarouselView carouselView = new CarouselView();
-            DockPanel.SetDock(carouselView, Dock.Top);
+            // Configurar el manejador de eventos de navegación del HeaderView
+            if (headerView != null)
+            {
+                headerView.NavigateRequested += OnNavigateRequested;
+            }
+        }
+
+        private void OnNavigateRequested(object sender, UserControl view)
+        {
+            MainContent.Content = view;
         }
 
         public void ShowPlans()
         {
             MainContent.Content = new PlanesView();
         }
+
         public void ShowExtras()
         {
             MainContent.Content = new ExtrasView();
+        }
+
+        public void ShowCart()
+        {
+            MainContent.Content = new CarritoView();
+        }
+
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            // Limpiar eventos
+            if (headerView != null)
+            {
+                headerView.NavigateRequested -= OnNavigateRequested;
+            }
+            base.OnClosing(e);
         }
     }
 }
